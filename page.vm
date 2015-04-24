@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>$page.title – $space.Name</title>
-	$template.path("/**").weight("1000") 
     $include.template("include-htmlhead.vm")
 
 </head>
@@ -11,24 +10,25 @@
 <!-- puregrid STARTS here -->
 <div class="pure-g-r">
 <!-- +++++++++++++++++++++ -->
-        $include.template("include-header.vm")
+  
+    $include.template("include-header.vm")
 
     <div class="pure-u-2-3">  
-  		<div data-role="content" class="page-content">
-		    <div class="blog-post-heading">
+        <div data-role="content" class="page-content">
+            <div class="blog-post-heading">
                 <h1 class="blog-post-title">$page.title</h1>
             </div>
-				$page.content             
-        	</div>
-		</div>
-            <div class="pure-u-1-3">
-                <div class="sidebar">
-                    $include.template("include-blogsidebar.vm")
-                </div>          
-            </div>
+            $page.content             
+        </div>
+    </div>
+    <div class="pure-u-1-3">
+        <div class="sidebar">
+            $include.template("include-blogsidebar.vm")
+        </div>          
+    </div>
                         
 
-        $include.template("include-footer.vm")
+    $include.template("include-footer.vm")
         
 <!-- puregrid ENDS here -->
 </div>

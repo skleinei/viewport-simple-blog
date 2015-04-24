@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
     
     /* remove all styles from the macros */
-    $("div" ).removeAttr( "style" );
+    $(".page-content div" ).removeAttr( "style" );
     
     /* add display none to the page info panles */
     $("div .sp-content-info" ).attr( "style", "display: none" );
