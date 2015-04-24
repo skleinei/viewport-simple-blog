@@ -1,0 +1,25 @@
+#* @vtlvariable name="grids" type="com.k15t.scroll.viewport.model.render.content.layouts.GridHelper" *#
+#* @vtlvariable name="pageLayout" type="com.k15t.scroll.viewport.model.render.content.layouts.PageLayout" *#
+
+$grids.setup(
+    {
+        "single": [""],
+        "three_equal": ["width: 33%;", "width: 33%;", "width: 33%;"],
+        "three_with_sidebars": ["", "width: 60%;", ""],
+        "two_equal": ["width: 50%;", "width: 50%;"],
+        "two_left_sidebar": ["", "width: 60%"],
+        "two_right_sidebar": ["width: 60%", ""]
+    }
+)
+
+#foreach($pageLayoutSection in $pageLayout.sections)
+
+    <div class="aui-group">
+    #foreach($cell in $pageLayoutSection.cells)
+        <div class="aui-item" style="$grids.get($pageLayoutSection.type, $velocityCount)">
+            $cell.content
+        </div>
+    #end
+    </div>
+
+#end

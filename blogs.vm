@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$space.Name</title>
+
+    $include.template("include-htmlhead.vm")
+
+</head>
+
+<body>
+<div class="pageall">
+<!-- puregrid STARTS here -->
+<div class="pure-g-r">
+<!-- +++++++++++++++++++++ -->
+
+        $include.template("include-header.vm")
+
+    <div class="pure-u-2-3">
+                    <div class="blog-post-list">
+                    
+				#if($blogPosts.isEmpty())	
+					<div class="blog-post-list-item">
+					 	$include.page("_Announcement")
+					</div>	
+					
+					#else
+                        #foreach($blogPost in $blogPosts)
+                            <div class="blog-post-list-item">
+                                <div class="blog-post-heading">
+                                    <h1 class="blog-post-title"><a href="$blogPost.link" >$blogPost.title</a></h1>
+
+                                    #set ($authorFullName = $user.fullName($blogPost.author))
+                                    <div class="author-image">
+                                         <a href="$link.to.page($authorFullName)"><img src="${contextPath}$user.image($blogPost.author)"></a> 
+                                    </div>
+                                    <div class="blog-post-meta">
+									<span class="blog-post-author">
+										<a href="$link.to.page($authorFullName)">$authorFullName</a>
+									</span>
+									<span class="blog-post-date"> posted on $blogPost.creationDate("MMM dd, yyyy")</span></div>
+                                </div>
+                                
+                    <div class="blog-post-item-social">              
+                    <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                    <a class="addthis_button_tweet"></a>
+                    <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+                    <a class="addthis_counter addthis_pill_style"></a>
+                    </div>
+                    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f11ce9434702e8"></script>
+           </div> 
+                                
+                                <div class="clearfix"></div>
+                                <div class="blog-post-content">
+                                    #if($velocityCount == 1)
+                                        <div>
+                                            $blogPost.content
+                                        </div>
+                                    #else
+                                        <div>
+                                            $blogPost.getExcerpt(400)
+                                        </div>
+                                        <p class="blog-post-link" ><a href="$blogPost.link">Continue Reading »</a></p>
+                                    #end
+                                </div>
+                            </div>   
+                        #end
+						
+				  #end	
+                    </div>
+            </div>
+            
+            <div class="pure-u-1-3">
+                <div class="sidebar">
+                    $include.template("include-blogsidebar.vm")
+                </div>          
+            </div>
+                        
+
+        $include.template("include-footer.vm")
+
+<!-- puregrid ENDS here -->
+</div>
+<!-- +++++++++++++++++++++ -->
+</div>
+</body>
+
+</html>

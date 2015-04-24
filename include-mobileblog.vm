@@ -1,0 +1,72 @@
+<div class="mobile-panel-inner">
+    <div class=" mobile-panel-header" role="navigation">
+        <ul class="mobile-panel-icons">
+            <li><a href="$home.link" id="side-home-bt"><i class="icon-list-home"></i></a></li>
+            <li><a href="#" id="side-tree-bt" class="selected"><i class="icon-list-list"></i></a></li>
+            <li><a href="#" id="side-search-bt"><i class="icon-search-1"></i></a></li>
+        </ul>
+    </div>
+    <div class="mobile-panel-content">
+        <div id="mobile-navigation">
+            <nav class="mobile-navigation-inner">
+                <ul class="mobile-navigation-list">
+                    <li>
+                        <a>2013</a>
+                        <i class="icon-angle-down posttitle"></i>
+                        <ul class="child-items">
+                            <li><a>January</a></li>
+                            <li><a>February</a></li>
+                            <li><a>March</a></li>
+                            <li><a>April</a></li>
+                            <li><a>May</a></li>
+                            <li><a>June</a></li>
+                            <li><a>July</a></li>
+                            <li><a>August</a></li>
+                            <li><a>September</a></li>
+                            <li><a>October</a></li>
+                            <li><a>November</a></li>
+                            <li><a>December</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>2014</a>
+                        <i class="icon-angle-down posttitle"></i>
+                        <ul class="child-items">
+                            <li><a>January</a></li>
+                            <li><a>February</a></li>
+                            <li><a>March</a></li>
+                            <li><a>April</a></li>
+                            <li><a>May</a></li>
+                            <li><a>June</a></li>
+                            <li><a>July</a></li>
+                            <li><a>August</a></li>
+                            <li><a>September</a></li>
+                            <li><a>October</a></li>
+                            <li><a>November</a></li>
+                            <li><a>December</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-index"></div>
+        <div id="mobile-search-container">
+            <div class="mobile-search-container-inner">
+                <div class="search-form-container">
+                    <form action="${space.url}/search" method="GET" id="mobile-search">
+                        <div class="search_container aui-quicksearch">
+                            <input data-role="none" id="mobile-search-input" class="gsc-input" size="33"
+                                   autocomplete="off" placeholder="Search" name="q" style="color: rgb(0, 0, 0);"
+                                   type="text">
+                            <a class="mobile-search-close">&times;</a>
+                        </div>
+                    </form>
+                </div>
+                <div id="mobile-search-results"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

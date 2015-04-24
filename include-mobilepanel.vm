@@ -1,0 +1,69 @@
+##change the macro's name so it works TODO
+
+#macro (help_mobile $children)
+    #foreach($child in $children)
+        #set($isAncestorOfCurrent = $child.isAncestor($page))
+        #if($child == $page)
+            <li class="current">
+        #elseif($isAncestorOfCurrent)
+            <li class="active">
+        #else
+            <li>
+        #end
+            #if($child.hasChildren && $isAncestorOfCurrent)
+                <a href="$child.link">$child.title</a>
+                <i class="icon-angle-up posttitle"></i>
+                <ul class="child-items">
+                    #help_mobile ($child.children)
+                </ul>
+            #elseif($child.hasChildren)
+                <a href="$child.link">$child.title</a>
+                <i class="icon-angle-down posttitle"></i>
+                <ul class="child-items">
+                    #help_mobile ($child.children)
+                </ul>
+            #else
+                <a href="$child.link">$child.title</a>
+            #end
+        </li>
+    #end
+#end
+
+
+
+<div class="mobile-panel-inner">
+    <div class=" mobile-panel-header" role="navigation">
+        <ul class="mobile-panel-icons">
+            <li><a href="$home.link" id="side-home-bt"><i class="icon-list-home"></i></a></li>
+            <li><a href="#" id="side-tree-bt" class="selected"><i class="icon-list-list"></i></a></li>
+            <li><a href="#" id="side-search-bt"><i class="icon-search-1"></i></a></li>
+        </ul>
+    </div>
+    <div class="mobile-panel-content">
+        <div id="mobile-navigation">
+            <nav class="mobile-navigation-inner">
+                <ul class="mobile-navigation-list">
+                    #help_mobile ( $space.home.children )
+                ##  <li class="#if($isSearch)current#end"><a  href="$space.url/search?q=Space">Search Results</a></li>
+                ##  <li class="#if($isError)current#end"><a  href="$space.url/404-page">404 Page</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-index"></div>
+        <div id="mobile-search-container">
+            <div class="mobile-search-container-inner">
+                <div class="search-form-container">
+                    <form action="${space.url}/search" method="GET" id="mobile-search">
+                        <div class="search_container aui-quicksearch">
+                            <input data-role="none" id="mobile-search-input" class="gsc-input" size="33"
+                                   autocomplete="off" placeholder="Search" name="q" style="color: rgb(0, 0, 0);"
+                                   type="text">
+                            <a class="mobile-search-close">&times;</a>
+                        </div>
+                    </form>
+                </div>
+                <div id="mobile-search-results"></div>
+            </div>
+        </div>
+    </div>
+</div>

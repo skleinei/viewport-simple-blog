@@ -1,0 +1,20 @@
+<div class="pure-u-1">
+    <footer>
+        <div class="footertext">
+            <p>Powered by <a href="http://www.atlassian.com" alt="Atlassian">Confluence</a> and <a href="http://www.k15t.com" alt="K15t Software">Scroll Viewport</a><p>
+        </div>
+        <div class="footerimage">
+            <a href="http://www.atlassian.com" alt="Atlassian"><img src="${theme.baseUrl}/images/confluence-logo.png"></a>
+        </div>
+        <div class="footerimage">
+            <a href="http://www.k15t.com" alt="K15t Software"><img src="${theme.baseUrl}/images/k15t-logo.png"></a>
+        </div>
+        <div class="footerimage">
+             <a href="http://thecontentwrangler.com" alt="The Content Wrangler"><img src="${theme.baseUrl}/images/tcw-logo.png"></a>
+        </div>
+        <div class="footerimage">
+            <a href="http://xmlpress.net" alt="XML Press"><img src="${theme.baseUrl}/images/xml-logo.png"></a>
+        </div>
+    </footer>
+</div>
+    

@@ -1,0 +1,35 @@
+#* Navigation Bar *#
+
+        <div class="pure-u-1">
+            <div class="topnav">
+			<div class="home-btn"><a href="/">Home</a></div> 
+                <div class="nav-items">$include.page("_MetaNavigation")</div><div class="login"><a href="/login.action?os_destination=%2F">Login</a></div>
+            </div>    
+        </div>
+        
+         <div class="pure-u-1">
+                <div class="keyvisual">
+                    <img src="${theme.baseUrl}/images/keyvisual.png">
+               </div>
+        </div>
+                
+        <div class="pure-u-1">
+            <div class="navbar">
+                <div class="mainnav">
+                <a id="menu-link" class="menu-link" href="#menu">&#9776;</a>
+                    <nav id="menu" role="navigation" class="offcanvas">
+                        <a class="menu-link close" href="#menu">x</a>
+                        $include.page("_MainNavigation")
+                	</nav>
+                </div>
+                <div class="search">
+                    <form action="${space.url}/search" method="GET" class="navbar-form pull-right">
+                        <div class="search_container">
+                            <input class="searchinput" size="33" autocomplete="off" placeholder="Search" name="q" type="text">
+                             <input type="hidden" name="max" value="15" />
+                        </div>
+                    </form>
+                 </div>
+             </div>
+        </div>
+

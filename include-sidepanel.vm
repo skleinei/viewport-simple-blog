@@ -1,0 +1,45 @@
+
+##change the macro's name so it works TODO
+
+#macro (help_navigation $children)
+    #foreach($child in $children)
+        #set($isAncestorOfCurrent = $child.isAncestor($page))
+        #if($child == $page)
+            <li class="current">
+        #elseif($isAncestorOfCurrent)
+            <li class="active">
+        #else
+            <li>
+        #end
+            #if($child.hasChildren && ($isAncestorOfCurrent || $child == $page ))
+                <i class="icon-angle-down pretitle"></i>
+                <a href="$child.link">$child.title</a>
+                <ul class="child-nav" style="display:block;">
+                    #help_navigation ($child.children)
+                </ul>
+            #elseif($child.hasChildren)
+                <i class="icon-angle-right pretitle"></i>
+                <a href="$child.link">$child.title</a>
+                <ul class="child-nav" id="">
+                    #help_navigation ($child.children)
+                </ul>
+            #else
+                <i class="hidden-md hidden-sm">•</i><a href="$child.link">$child.title</a>
+            #end
+        </li>
+    #end
+#end
+
+    <nav class="aui-navgroup aui-navgroup-vertical">
+        <div class="aui-navgroup-inner">
+            <ul class="aui-nav">
+                <li class="#if($isHome)current#end">
+                    <i class="hidden-md hidden-sm">•</i><a class="nav-single" href="$home.link">Home</a></li>
+                #help_navigation ( $space.home.children )
+    ##            <li class="#if($isSearch)current#end"><i class="hidden-md hidden-sm">•</i><a  href="$space.url/search?q=Space">Search Results</a></li>
+    ##            <li class="#if($isError)current#end"><i class="hidden-md hidden-sm">•</i><a  href="$space.url/404-page">404 Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+

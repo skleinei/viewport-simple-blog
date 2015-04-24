@@ -1,0 +1,32 @@
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="author" content="Created with Scroll Viewport - K15t Software">
+
+    <!-- CSS -->
+    <link href="${theme.baseUrl}/css/base.css" rel="stylesheet">
+    <link href="${theme.baseUrl}/css/main.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="${theme.baseUrl}/js/html5shiv.min.js"></script>
+    <script src="${theme.baseUrl}/js/respond.min.js"></script>
+    <![endif]-->
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" media="all" href="${theme.baseUrl}/css/main_ie.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="${theme.baseUrl}/css/main_ie7.css"/>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${theme.baseUrl}/images/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${theme.baseUrl}/images/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${theme.baseUrl}/images/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="${theme.baseUrl}/images/icons/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="${theme.baseUrl}/images/icons/favicon.png">
+
+    <!-- SCRIPTS -->
+    <script src="${theme.baseUrl}/js/jquery-1.10.2.min.js"></script>
+    <script src="${theme.baseUrl}/js/main.js"></script>
