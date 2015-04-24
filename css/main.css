@@ -147,6 +147,7 @@ h3 {
 }
 
 .mainnav {
+    margin-top: 16px;
     padding: 15px 0 10px 0;
     float: left;
     font-family: 'League Gothic';
